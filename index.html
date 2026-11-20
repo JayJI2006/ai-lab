@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0c15">
+  <meta name="description" content="AI Lab 是一個記錄 AI 學習、網頁開發與實作作品的個人網站。">
+  <title>AI Lab｜個人 AI 實驗室</title>
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script src="./assets/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳至主要內容</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="AI Lab 首頁">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>AI <span class="brand-accent">Lab</span></span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" hidden>
+        <span class="menu-icon" aria-hidden="true"></span>
+        選單
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="主導覽">
+        <a href="#home" aria-current="location">首頁</a>
+        <a href="#skills">技能</a>
+        <a href="#projects">作品</a>
+        <a href="#contact">聯絡</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" id="home" aria-labelledby="home-title" tabindex="-1">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow hero-label">個人 AI 實驗室</p>
+          <h1 id="home-title">探索 AI，<br><span>動手做出作品。</span></h1>
+          <p class="hero-intro">從第一個網站出發，記錄我如何學習 AI、練習網頁開發，並把想法做成可以親手試用的作品。</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">瀏覽作品</a>
+            <a class="button button-secondary" href="#skills">查看技能</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <img src="./assets/particle-torus.jpg" width="1536" height="1024" alt="" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills-section" id="skills" aria-labelledby="skills-title" tabindex="-1">
+      <div class="container">
+        <header class="section-heading">
+          <p class="eyebrow" lang="en">SKILLS</p>
+          <h2 id="skills-title">技能與學習方向</h2>
+          <p>前端從這個網站開始練習，接下來會探索 AI 應用與 Python。</p>
+        </header>
+        <div class="card-grid">
+          <article class="skill-card">
+            <span class="skill-icon skill-icon-blue" aria-hidden="true">&lt;/&gt;</span>
+            <h3>前端網頁開發</h3>
+            <p>用 HTML 建立內容結構，用 CSS 適應不同螢幕，再用 JavaScript 加入導覽與篩選。</p>
+            <ul class="tags" aria-label="使用技術">
+              <li>HTML</li><li>CSS</li><li>JavaScript</li>
+            </ul>
+          </article>
+          <article class="skill-card">
+            <span class="skill-icon skill-icon-purple" aria-hidden="true">✦</span>
+            <h3>生成式 AI</h3>
+            <p>練習寫出清楚的提示詞，觀察不同指令如何影響模型回答，並記下結果。</p>
+            <ul class="tags" aria-label="學習主題">
+              <li>提示詞</li><li>生成式 AI</li>
+            </ul>
+          </article>
+          <article class="skill-card">
+            <span class="skill-icon skill-icon-teal" aria-hidden="true"><span class="chart-icon"></span></span>
+            <h3>資料處理與視覺化</h3>
+            <p>規劃用小型資料集練習讀取、整理與繪圖，讓資料更容易理解。</p>
+            <ul class="tags" aria-label="學習主題">
+              <li>Python</li><li>資料視覺化</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects-section" id="projects" aria-labelledby="projects-title" tabindex="-1">
+      <div class="container">
+        <div class="projects-heading">
+          <header class="section-heading">
+            <p class="eyebrow" lang="en">PROJECTS</p>
+            <h2 id="projects-title">實作作品</h2>
+            <p>從已完成的網站初版，到下一步想嘗試的練習主題。</p>
+          </header>
+          <div class="filters" role="group" aria-label="依作品狀態篩選" hidden>
+            <button type="button" data-filter="all" aria-pressed="true">全部</button>
+            <button type="button" data-filter="complete" aria-pressed="false">已完成</button>
+            <button type="button" data-filter="in-progress" aria-pressed="false">開發中</button>
+          </div>
+        </div>
+
+        <p class="visually-hidden" role="status" id="filter-result"></p>
+        <div class="card-grid" id="project-grid">
+          <article class="project-card" data-status="complete">
+            <div class="project-art project-art-site" aria-hidden="true">
+              <div class="site-mini">
+                <div class="site-mini-copy"><strong>AI Lab</strong><i></i><i></i><i></i></div>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="status status-complete">初版完成</span>
+              <h3>AI Lab 作品集網站</h3>
+              <p>目前瀏覽的網站。整理學習方向和作品，並提供手機導覽與作品篩選。</p>
+            </div>
+          </article>
+          <article class="project-card" data-status="in-progress">
+            <div class="project-art project-art-prompt" aria-hidden="true">
+              <div class="prompt-mini">
+                <span class="prompt-mini-mark">✦</span>
+                <div><i></i><i></i><i></i></div>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="status status-progress">開發中</span>
+              <h3>提示詞練習筆記</h3>
+              <p>規劃記錄同一個任務的提示詞版本，比較指令改寫前後的回答差異。</p>
+            </div>
+          </article>
+          <article class="project-card" data-status="in-progress">
+            <div class="project-art project-art-data" aria-hidden="true">
+              <div class="data-mini"><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+            <div class="project-body">
+              <span class="status status-progress">開發中</span>
+              <h3>資料視覺化練習</h3>
+              <p>規劃整理一份小型公開資料集，再用圖表呈現其中的變化或差異。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title" tabindex="-1">
+      <div class="container">
+        <div class="contact-panel">
+          <span class="contact-icon" aria-hidden="true"><span class="envelope-icon"></span></span>
+          <div>
+            <p class="eyebrow" lang="en">CONTACT</p>
+            <h2 id="contact-title">聯絡</h2>
+            <p>AI Lab 正在持續建設中，更多作品與聯絡方式將陸續開放。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#home" aria-label="AI Lab，回到首頁">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>AI <span class="brand-accent">Lab</span></span>
+      </a>
+      <a class="footer-link" href="#home">回到頂端</a>
+    </div>
+  </footer>
+</body>
+</html>
