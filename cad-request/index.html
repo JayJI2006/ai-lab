@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0c15">
+  <meta name="description" content="整理 CAD 繪圖需求，在瀏覽器內產生可複製的訂單摘要。">
+  <meta http-equiv="Content-Security-Policy" content="form-action 'none'; connect-src 'none'">
+  <title>CAD 繪圖需求整理器｜AI Lab</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳至主要內容</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="AI Lab 首頁">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>AI <span class="brand-accent">Lab</span></span>
+      </a>
+      <a class="back-link" href="../index.html#projects">返回作品集</a>
+    </div>
+  </header>
+
+  <main class="container cad-main" id="main" tabindex="-1">
+    <header class="cad-intro">
+      <div>
+        <h1>CAD 繪圖需求整理器</h1>
+        <p>填寫圖面規格與交付要求，頁面會自動整理成可複製的訂單摘要。</p>
+      </div>
+      <div class="blueprint" aria-hidden="true">
+        <span class="blueprint-shape"></span>
+      </div>
+    </header>
+
+    <div class="cad-workspace">
+      <section class="cad-panel" aria-labelledby="form-title">
+        <h2 id="form-title">繪圖需求</h2>
+        <p class="panel-hint">請填寫全部欄位</p>
+        <form id="request-form" autocomplete="off">
+          <fieldset disabled>
+            <legend class="visually-hidden">CAD 繪圖需求</legend>
+            <div class="field-grid">
+              <div class="field">
+                <label for="service">服務類型</label>
+                <select id="service" required>
+                  <option value="" selected disabled>選擇服務類型</option>
+                  <option>2D CAD 製圖</option>
+                  <option>圖面重繪</option>
+                  <option>既有圖面修改</option>
+                  <option>3D 建模</option>
+                  <option>其他（見需求描述）</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="format">交付格式</label>
+                <select id="format" required>
+                  <option value="" selected disabled>選擇檔案格式</option>
+                  <option>DWG</option>
+                  <option>DXF</option>
+                  <option>PDF</option>
+                  <option>STEP</option>
+                  <option>其他（見需求描述）</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="deadline">截止日期</label>
+                <input type="date" id="deadline" required>
+              </div>
+
+              <div class="field">
+                <label for="quantity">圖紙數量</label>
+                <input type="number" id="quantity" min="1" step="1" required aria-describedby="quantity-error">
+                <p class="field-error" id="quantity-error" hidden>請輸入 1 以上的整數。</p>
+              </div>
+
+              <div class="field field-wide">
+                <label for="description">需求描述</label>
+                <textarea id="description" rows="5" required aria-describedby="description-hint"></textarea>
+                <p class="field-hint" id="description-hint">可註明圖面範圍、尺寸單位、比例或標註要求。</p>
+              </div>
+            </div>
+          </fieldset>
+          <noscript><p class="form-note">請啟用 JavaScript 以使用整理器。</p></noscript>
+        </form>
+        <p class="form-note">資料僅在此頁面處理。請勿填寫姓名、電話、地址等個人資料。</p>
+      </section>
+
+      <section class="cad-panel summary-panel" aria-labelledby="summary-title">
+        <div class="summary-heading">
+          <h2 id="summary-title">訂單摘要</h2>
+          <button class="copy-button" id="copy-summary" type="button" disabled>
+            <span class="copy-icon" aria-hidden="true"></span>
+            複製摘要
+          </button>
+        </div>
+        <div class="summary-empty" id="summary-empty">
+          <span class="document-icon" aria-hidden="true"></span>
+          <p>填寫完整的繪圖需求後，摘要會顯示在這裡。</p>
+        </div>
+        <textarea class="summary-output" id="summary-output" aria-labelledby="summary-title" rows="12" readonly hidden></textarea>
+        <p class="copy-status" id="copy-status" role="status"></p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
